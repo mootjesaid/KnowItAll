@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float:right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: rgb(255,192,203);
+    opacity: 60%;
+}
+
+.topnav a.active {
+    color: rgb(255,192,203);
+    opacity: 80%;
+}
+
+.navigation{
+    font-family: "Trebuchet MS";
+}
+
+.navigation img{
+    overflow: hidden;
+    width: 5vh;
+    margin-left: 50%;
+}
