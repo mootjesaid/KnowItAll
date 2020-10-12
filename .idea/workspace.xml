@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82678bef-4221-4cad-b796-1cde10be0606" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/willekeurig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inloggen.html" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styless.css" beforeDir="false" afterPath="$PROJECT_DIR$/styless.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/willekeurig.html" beforeDir="false" afterPath="$PROJECT_DIR$/willekeurig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/willekeurig.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -38,6 +41,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
