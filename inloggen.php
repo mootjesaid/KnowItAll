@@ -12,6 +12,7 @@
         <meta name="copyright" content="copyright">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
+        <link rel="">
 
         <title>KnowItAll</title>
 
@@ -60,16 +61,6 @@
 
 <?php
 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'demo');
-
-$link = mysqli_connect(DB_SERVER, root, , DB_NAME);
-
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+require_once "mysql.php"; //De file mysql.php hierbij toevoegen
 
 ?>

@@ -1,6 +1,11 @@
+<?php
+$gebruikersnaam = "root";
+$wachtwoord = "";
+$database = "knowitall";
+
+$conn = mysqli_connect("localhost", $gebruikersnaam, $wachtwoord, $database);
 
 
-    <?php
     $gebruikersnaam = "root";
     $wachtwoord = "";
     $database = "knowitall";
@@ -29,4 +34,11 @@
     }
 
 
-    ?>
+
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+
