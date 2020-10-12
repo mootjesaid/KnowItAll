@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,27 +40,12 @@
     <?php
 
     require_once "mysql.php"; //De file mysql.php hierbij toevoegen
-
-    $sql = "SELECT ID, weetje, afbeelding, datum, bron, actueel FROM weetjes ORDER BY rand() limit 1";
-
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-
-            echo "" . $row["datum"]. "<br><br>";
-            echo "" . $row["weetje"]. "<br><br>";
-
-            echo "" . $row["bron"]. "<br><br>";
+    dagweetje();
 
 
-        }
-    } else {
-        echo "0 results";
-    }
 
-    mysqli_close($conn);
+
+
     ?>
 </div>
 
