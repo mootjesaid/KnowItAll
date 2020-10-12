@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82678bef-4221-4cad-b796-1cde10be0606" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inloggen.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/willekeurig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/willekeurig.html" beforeDir="false" afterPath="$PROJECT_DIR$/willekeurig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/willekeurig.php" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/documenten/Plan van aanpak Mo.Thomas.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documenten/Technisch_Ontwerp.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inloggen.html" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.html" afterDir="false" />
+>>>>>>> fb8f8fcdc49cf4522997674d1424d13b7fe7d67c
+>>>>>>> 6beff97dbaf0bbec146a68f49d3c217a0f206a56
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -38,6 +56,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
