@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,9 +22,8 @@
         <meta name="copyright" content="copyright">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
-
+        <link rel="stylesheet" href="index.php">
         <title>KnowItAll</title>
-
     </head>
 
     <header>
@@ -22,38 +31,25 @@
 
             <div class="topnav">
                 <img src="Images/music.png">
-                <a class="active" href="inloggen.html">Inloggen</a>
+                <a href="welkom.php">Profiel</a>
                 <a href="willekeurig.html">Willekeurig weetje</a>
-                <a href="index.html">Home</a>
+                <a  class="active" href="index.php">profiel</a>
             </div>
-
         </div>
-
     </header>
 
     <body>
 
     <div class="titel">
-        <h1>Inloggen</h1>
+        <h1>Welkom</h1>
     </div>
-    <form action="">
 
-    <div class="box2">
-        <div class="container">
-            <label for="Gebr"><b>Gebruikersnaam</b></label>
-            <input type="text" placeholder="Vul uw gebruikersnaam in..." name="uname" required>
+    <p>
+        <a href="uitloggen.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </p>
 
-            <label for="WW"><b>Wachtwoord</b></label>
-            <input type="password" placeholder="Vul uw wachtwoord in" name="psw" required>
 
-            <button type="submit">Inloggen</button>
-        </div>
 
-        <div class="container">
-            <span class="psw"><a href="#">Wachtwoord vergeten?</a></span>
-        </div>
-        </form>
-
-    </div>
     </body>
+
 </html>

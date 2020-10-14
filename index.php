@@ -22,10 +22,10 @@
 
         <div class="topnav">
             <img src="Images/music.png">
-            <a href="inloggen.html">Inloggen</a>
+            <a href="inloggen.php">Inloggen</a>
             <a href="willekeurig.html">Willekeurig weetje</a>
             <a  class="active" href="index.html">Home</a>
-            <a  class="active" href="jojo.php">test</a>
+            <a  class="active" href="welkom.php">test</a>
         </div>
     </div>
 </header>
@@ -36,19 +36,16 @@
 </div>
 
 <div class="box">
-
     <?php
 
     require_once "mysql.php"; //De file mysql.php hierbij toevoegen
     dagweetje();
 
-
-
-
-
     ?>
-</div>
+    
 
+</div>
+/
 </body>
 
 </html>

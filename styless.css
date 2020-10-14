@@ -45,6 +45,7 @@ body{
     margin-left: 70vh;
     margin-top: 10vh;
     font-family: "Gilroy ExtraBold";
+
 }
 
 #queen img{
@@ -116,4 +117,8 @@ button {
 
 button:hover {
     opacity: 0.8;
+}
+
+.weetjesimg{
+    width: 100px;
 }
