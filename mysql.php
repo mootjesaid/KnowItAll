@@ -33,6 +33,12 @@ $conn = mysqli_connect("localhost", $gebruikersnaam, $wachtwoord, $database);
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: welcome.php");
+    exit;
+}
+
 
 
 
@@ -54,6 +60,28 @@ function dagweetje(){
             echo "" . $row["weetje"] . "<br><br>";
             echo "<img src='images/" . $row["afbeelding"] . "' style='width: 300px'><br><br>";
             echo "" . $row["bron"] . "<br><br>";
+
+
+        }
+    } else {
+        echo "0 results";
+    }
+}
+
+function adminweetjes(){
+    $sql = "SELECT weetje_ingezonden, datum_ingezonden FROM weetjes_gebruikers";
+
+
+    $result = mysqli_query($GLOBALS["conn"], $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            echo "" . $row["datum_ingezonden"] . "<br>";
+            echo "" . $row["weetje_ingezonden"] . "<br>";
+            echo "<input type='submit' value='afwijzen'><input type='submit' value='Goedkeuren'> <br><br>";
+
 
 
         }

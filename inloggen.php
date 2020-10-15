@@ -2,11 +2,7 @@
 // Initialize the session
 session_start();
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
-    exit;
-}
+
 
 // Include config file
 require_once "mysql.php";
@@ -87,38 +83,67 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-<div class="wrapper">
-    <h2>Login</h2>
-    <p>Please fill in your credentials to login.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-            <label>Username</label>
-            <input type="text" name="gebruikersnaam" class="form-control" value="<?php echo $username; ?>">
-            <span class="help-block"><?php echo $username_err; ?></span>
+    <head>
+        <meta http-equiv="content-type"
+              Content="text/html;
+                  charset=UTF-8">
+        <meta name="robots" content="all">
+        <meta name="language" content="Dutch">
+        <meta name="author" content="Mohamed">
+        <meta name="description" content="KnowItall">
+        <meta name="keywords" content="KnowItAll, weetjes">
+        <meta name="copyright" content="copyright">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <style type="text/css">
+            body{ font: 14px sans-serif; }
+            .wrapper{ width: 350px; padding: 20px; }
+        </style>
+        <link rel="stylesheet" href="styless.css">
+        <link rel="stylesheet" href="mysql.php">
+        <title>KnowItAll</title>
+    </head>
+
+    <header>
+        <div class="navigation">
+
+            <div class="topnav">
+                <img src="Images/music.png">
+                <a href="inloggen.php">Inloggen</a>
+                <a href="willekeurig.html">Willekeurig weetje</a>
+                <a  class="active" href="index.html">Home</a>
+            </div>
         </div>
-        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
-            <input type="password" name="wachtwoord" class="form-control">
-            <span class="help-block"><?php echo $password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
-        </div>
-        <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-    </form>
-</div>
-</body>
+    </header>
+
+    <body>
+    <div class="titel">
+        <h1>Know it all!</h1>
+    </div>
+
+    <div class="wrapper" style=" display: block; margin-left: auto; margin-right: auto; margin-top: 10vh">
+        <h2>Login</h2>
+        <p>Please fill in your credentials to login.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <label>Username</label>
+                <input type="text" name="gebruikersnaam" class="form-control" value="<?php echo $username; ?>">
+                <span class="help-block"><?php echo $username_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <label>Password</label>
+                <input type="password" name="wachtwoord" class="form-control">
+                <span class="help-block"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login" style="background-color: #F06292; color: white; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        </form>
+    </div>
+
+    </body>
+
 </html>

@@ -32,7 +32,7 @@ body{
 .navigation img{
     overflow: hidden;
     width: 5vh;
-    margin-left: 50%;
+    margin-left: 96.8vh;
 }
 
 .box {
@@ -41,24 +41,23 @@ body{
     border: 4px solid;
     padding: 50px;
     margin: 20px;
-    overflow: hidden;
     margin-left: 70vh;
     margin-top: 10vh;
     font-family: "Gilroy ExtraBold";
-
+    overflow: visible;
 }
 
-#queen img{
-    width: 25vh;
-    margin-left: 13vh;
-    margin-top: 5vh;
+.boxadmin{
+    background-color: lightblue;
+    width: 500px;
+    height: 100px;
+    overflow: auto;
 }
+
 
 .titel{
     font-family: "Gilroy ExtraBold";
     text-align: center;
-    margin-left: 5vh;
-    margin-top: 5vh;
 }
 [type="datum"] {
     background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
@@ -95,7 +94,7 @@ input {
     font-family: "Gilroy ExtraBold";
 }
 form {
-    border: 3px solid #f1f1f1;
+
 }
 input[type=text], input[type=password] {
     width: 100%;
@@ -122,3 +121,21 @@ button:hover {
 .weetjesimg{
     width: 100px;
 }
+
+.welkomform{
+    padding-left: 5vh;
+    width: 550px;
+    height: 450px;
+    padding: 10vh;
+    position: relative;
+    margin-top: -5vh;
+}
+
+#insturen{
+    height: 200px;
+    width: 750px;
+}
+
+
+
+
