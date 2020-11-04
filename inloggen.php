@@ -79,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
+
     // Close connection
     mysqli_close($link);
 }
@@ -111,9 +112,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <div class="topnav">
                 <img src="Images/music.png">
-                <a href="inloggen.php">Inloggen</a>
-                <a href="willekeurig.html">Willekeurig weetje</a>
-                <a  class="active" href="index.html">Home</a>
+                <a  href="inloggen.php">Inloggen</a>
+                <a href="willekeurig.php">Willekeurig weetje</a>
+                <a href="index.php">Home</a>
             </div>
         </div>
     </header>
@@ -144,6 +145,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>
 
-    </body>
 
 </html>

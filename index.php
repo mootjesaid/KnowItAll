@@ -23,9 +23,9 @@
         <div class="topnav">
             <img src="Images/music.png">
             <a href="inloggen.php">Inloggen</a>
-            <a href="willekeurig.html">Willekeurig weetje</a>
+            <a href="willekeurig.php">Willekeurig weetje</a>
             <a  class="active" href="index.html">Home</a>
-            <a  class="active" href="welkom.php">test</a>
+            <a  href="welkom.php">test</a>
         </div>
     </div>
 </header>

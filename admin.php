@@ -1,3 +1,4 @@
+
 <?php
 ?>
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
     <meta name="copyright" content="copyright">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styless.css">
-    <link rel="stylesheet" href="mysql.php">
+    <script src="willekeurig.js"></script>
     <title>KnowItAll</title>
 </head>
 
@@ -36,11 +37,39 @@
     <h1>Admin</h1>
 </div>
 
-<div class="boxadmin">
+<div class="box">
     <?php
     // Include config file
     require_once "mysql.php";
-    adminweetjes();
+
+    $sql = "SELECT weetjes_gebruikers_id, weetje_ingezonden, datum_ingezonden, bron, gebruiker_id FROM weetjes_gebruikers";
+
+    $result = mysqli_query($GLOBALS["conn"], $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            $id     = $row["weetjes_gebruikers_id"];
+            $gebruikersid   = $row["gebruiker_id"];
+
+            "<form class='123' method='get'>";
+            echo "" . $row["datum_ingezonden"] . "<br>";
+            echo "" . $row["weetje_ingezonden"] . "<br>";
+            echo "" . $row["gebruiker_id"] . "<br>";
+            echo "<input type='submit'  name='afwijzen'  onclick='goedkeuren($id) 'value='afwijzen'><input type='submit' name='goedkeuren' onclick='goedkeuren($id)' value='goedkeuren'> <input type='submit'  name='afwijzen' onclick='gebruikerverwijderen($gebruikersid)'   value='Gebruiker verwijderen'> <br><br>";
+            "</form>";
+
+
+            $gebruikersnaam = $row["gebruiker_id"];
+            $datum = $row["datum_ingezonden"];
+            $weetje = $row["weetje_ingezonden"];
+
+            $GLOBALS[$gebruikersnaam] = $gebruikersnaam;
+            $GLOBALS[$datum] = $datum;
+            $GLOBALS[$weetje] = $weetje;
+        }
+    }
     ?>
 
 </div>

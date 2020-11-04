@@ -68,9 +68,8 @@ function dagweetje(){
     }
 }
 
-function adminweetjes(){
-    $sql = "SELECT weetje_ingezonden, datum_ingezonden FROM weetjes_gebruikers";
-
+function eigenweetjes(){
+    $sql = "SELECT datum_ingezonden, weetje_ingezonden FROM weetjes_gebruikers WHERE DATE gebruiker_id='$gebruikersnaamid'";
 
     $result = mysqli_query($GLOBALS["conn"], $sql);
 
@@ -78,10 +77,10 @@ function adminweetjes(){
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
 
-            echo "" . $row["datum_ingezonden"] . "<br>";
-            echo "" . $row["weetje_ingezonden"] . "<br>";
-            echo "<input type='submit' value='afwijzen'><input type='submit' value='Goedkeuren'> <br><br>";
-
+            echo "" . $row["datum"] . "<br><br>";
+            echo "" . $row["weetje"] . "<br><br>";
+            echo "<img src='images/" . $row["afbeelding"] . "' style='width: 300px'><br><br>";
+            echo "" . $row["bron"] . "<br><br>";
 
 
         }
@@ -89,5 +88,28 @@ function adminweetjes(){
         echo "0 results";
     }
 }
+function agenda()
+{
+    $datum2 = empty($_POST['datum']) ? '' : $_POST['datum'];
+    $sql = "SELECT datum, weetje, afbeelding, bron FROM weetjes WHERE datum = '$datum2' LIMIT 1 ";
+
+    $result = mysqli_query($GLOBALS["conn"], $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            echo "" . $row["datum"] . "<br><br>";
+            echo "" . $row["weetje"] . "<br><br>";
+                echo "<img src='images/" . $row["afbeelding"] . "' style='width: 250px'><br><br>";
+
+
+            echo "" . $row["bron"] . "<br><br>";
+
+
+        }
+    }
+}
+
 ?>
 

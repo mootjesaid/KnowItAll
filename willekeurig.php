@@ -1,3 +1,8 @@
+<?php
+require_once 'mysql.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +17,7 @@
     <meta name="copyright" content="copyright">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styless.css">
+    <link rel="script" href="willekeurig.js">
 
 
     <title>KnowItAll</title>
@@ -22,8 +28,8 @@
 
         <div class="topnav">
             <img src="Images/music.png">
-            <a href="inloggen.html">Inloggen</a>
-            <a class="active" href="willekeurig.html">Willekeurig weetje</a>
+            <a href="inloggen.php">Inloggen</a>
+            <a class="active" href="willekeurig.php">Willekeurig weetje</a>
             <a href="index.php">Home</a>
         </div>
 
@@ -37,11 +43,16 @@
 </div>
 
 <div class="box2">
-    <form id="weetjeszoeker">
+    <form id="weetjeszoeker" method="post">
         <label for="dag">Kies een dag uit:</label>
         <input type="date" id="dag" name="datum">
         <input type="submit" name="submit" onchange="datum()">
     </form>
+    <div class="weetjes">
+        <?php
+        agenda();
+        ?>
+    </div>
 
 </div>
 
@@ -51,5 +62,5 @@
 </body>
 
 </html>
-<?php
+
 ?>
