@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="navigation">
 
             <div class="topnav">
-                <img src="Images/music.png">
+                <img src="Images/music.png" alt="Music" class="responsive">
                 <a  href="inloggen.php">Inloggen</a>
                 <a href="willekeurig.php">Willekeurig weetje</a>
                 <a href="index.php">Home</a>

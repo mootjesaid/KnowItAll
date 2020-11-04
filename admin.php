@@ -23,7 +23,7 @@
     <div class="navigation">
 
         <div class="topnav">
-            <img src="Images/music.png">
+            <img src="Images/music.png" alt="Music" class="responsive">
             <a href="inloggen.php">Inloggen</a>
             <a href="willekeurig.html">Willekeurig weetje</a>
             <a  class="active" href="index.html">Home</a>

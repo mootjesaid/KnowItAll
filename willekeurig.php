@@ -27,7 +27,7 @@ require_once 'mysql.php';
     <div class="navigation">
 
         <div class="topnav">
-            <img src="Images/music.png">
+            <img src="Images/music.png" alt="Music" class="responsive">
             <a href="inloggen.php">Inloggen</a>
             <a class="active" href="willekeurig.php">Willekeurig weetje</a>
             <a href="index.php">Home</a>
@@ -42,7 +42,7 @@ require_once 'mysql.php';
     <h1>Willekeurige weetje</h1>
 </div>
 
-<div class="box2">
+<div class="box random-box">
     <form id="weetjeszoeker" method="post">
         <label for="dag">Kies een dag uit:</label>
         <input type="date" id="dag" name="datum">
@@ -62,5 +62,3 @@ require_once 'mysql.php';
 </body>
 
 </html>
-
-?>

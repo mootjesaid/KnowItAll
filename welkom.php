@@ -26,7 +26,7 @@ require_once "mysql.php";
         <div class="navigation">
 
             <div class="topnav">
-                <img src="Images/music.png">
+                <img src="Images/music.png" alt="Music" class="responsive">
                 <a href="welkom.php">Profiel</a>
                 <a href="willekeurig.php">Willekeurig weetje</a>
                 <a  class="active" href="index.php">profiel</a>
