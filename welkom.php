@@ -50,10 +50,10 @@ require_once "mysql.php";
     </form>
 
     <div class="weetjesgebruiker">
-        <h1>hallo</h1>
         <?php
         session_start();
         $gebruikersnaamid = $_SESSION['gebruikersnaam'];
+        echo "<h1>Hallo $gebruikersnaamid</h1>";
         $sql = "SELECT datum_ingezonden, weetje_ingezonden, gebruiker_id FROM weetjes_gebruikers WHERE  gebruiker_id ='$gebruikersnaamid'";
 
         $result = mysqli_query($GLOBALS["conn"], $sql);
@@ -69,7 +69,7 @@ require_once "mysql.php";
 
             }
         } else {
-            echo "0 results";
+            echo "Geen ingestuurde weetjes.";
         }
         ?>
 
@@ -90,7 +90,7 @@ require_once "mysql.php";
     $gebruikersnaamid = $_SESSION['gebruikersnaam'];
     $weetje = $datum = "";
     $weetje_err = $datum_err = $gebruikersnaamid_err = "";
-    echo $gebruikersnaamid;
+
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 

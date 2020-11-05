@@ -11,9 +11,9 @@ function afwijzen(id) {
 
 }
 
-function gebruikerverwijderen(gebruikersid) {
-    alert('hallo' + id);
+function gebruikerverwijderen(id) {
+    alert('hallo' + id)  ;
 
-    location.href = "http://localhost/Level%204/KnowItAll/afwijzen.php?gebruiker=" +id;
+    location.href = "http://localhost/Level%204/KnowItAll/gebruikerverwijderen.php?gebruiker=" +id;
 
 }
