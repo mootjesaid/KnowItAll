@@ -64,7 +64,23 @@ function dagweetje(){
 
         }
     } else {
-        echo "0 results";
+        $sql = "SELECT datum, weetje, afbeelding, bron FROM weetjes order by rand() limit 1";
+        $result = mysqli_query($GLOBALS["conn"], $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                echo "" . $row["datum"] . "<br><br>";
+                echo "" . $row["weetje"] . "<br><br>";
+                echo "<img src='images/" . $row["afbeelding"] . "' style='width: 300px'><br><br>";
+                echo "" . $row["bron"] . "<br><br>";
+
+
+            }
+
+            
+        }
     }
 }
 
