@@ -17,13 +17,32 @@ require_once 'mysql.php';
     <meta name="copyright" content="copyright">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styless.css">
-    <link rel="script" href="willekeurig.js">
+   <script src="willekeurig.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <title>KnowItAll</title>
 </head>
 
 <header>
+
+    <div class="burgermenu">
+        <div class="topnav2">
+            <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="#news">Home</a>
+                <a href="#contact">Willekeurige weetje</a>
+                <a href="#about">Inloggen</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+
     <div class="navigation">
 
         <div class="topnav">

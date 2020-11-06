@@ -2,21 +2,20 @@
 require_once "mysql.php";
 $id = $_GET['gebruiker'];
 
-// sql to delete a record
-$sql = "DELETE FROM weetjes_gebruikers WHERE weetjes_gebrukers_id = '$id' ";
+$sql = "DELETE FROM weetjes_gebruikers WHERE weetjes_gebruikers_id = '$id'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Gebruiker succesvol verwijderd";
+    header("Location: http://localhost/Level%204/KnowItAll/admin.php");
+
+    exit();
+
 } else {
-    echo "Error verwijdering van gebruiker: " . $conn->error;
+    echo "Fout " . $conn->error;
 }
 
 $conn->close();
 
 ?>
-
-
-
 
 <html>
 <head>

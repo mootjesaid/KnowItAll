@@ -33,7 +33,7 @@ if ($conn->query($sql) === TRUE) {
 $sql = "DELETE  FROM gebruikers WHERE id = '$id' ";
 
 if ($conn->query($sql) === TRUE) {
-    echo "gebruiker succesvol verwijderd";
+    header("Location: http://localhost/Level%204/KnowItAll/admin.php");
 } else {
     echo "Error verwijdering van gebruiker: " . $conn->error;
 }

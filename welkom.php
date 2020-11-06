@@ -2,6 +2,8 @@
 // Include config file
 require_once "mysql.php";
 
+$sql = "SELECT gebruikersnaam FROM gebruikers ";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +21,27 @@ require_once "mysql.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
         <link rel="stylesheet" href="index.php">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="willekeurig.js"></script>
         <title>KnowItAll</title>
     </head>
 
     <header>
+        <div class="burgermenu">
+            <div class="topnav2">
+                <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                    <a href="#news">Home</a>
+                    <a href="#contact">Willekeurige weetje</a>
+                    <a href="#about">Inloggen</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
         <div class="navigation">
 
             <div class="topnav">
@@ -38,6 +57,9 @@ require_once "mysql.php";
 
     <div class="titel">
         <h1>Welkom</h1>
+        <p>
+            <a href="uitloggen.php" class="btn btn-danger">Uitloggen</a>
+        </p>
     </div>
 
     <form class="welkomform" action="welkom.php" method="POST">
@@ -45,13 +67,16 @@ require_once "mysql.php";
         <input type="date" id="dag" name="datum">
         <label for="weetje"></label>
         <textarea name="insturen" id="insturen" maxlength="250"></textarea>
-            <input type="submit" name="submit" class="btn btn-primary" value="verzendweetje" style="background-color: #F06292; color: white; display: block; margin-left: auto; margin-right: auto;">
+            <input type="submit" name="submit" class="btn btn-primary" value="verzendweetje">
         <h><br>
     </form>
 
+
     <div class="weetjesgebruiker">
+
         <?php
         session_start();
+
         $gebruikersnaamid = $_SESSION['gebruikersnaam'];
         echo "<h1>Hallo $gebruikersnaamid</h1>";
         $sql = "SELECT datum_ingezonden, weetje_ingezonden, gebruiker_id FROM weetjes_gebruikers WHERE  gebruiker_id ='$gebruikersnaamid'";
@@ -68,17 +93,16 @@ require_once "mysql.php";
 
 
             }
-        } else {
+        } elseif ($gebruikersnaamid ){
+
+        }
+        else {
             echo "Geen ingestuurde weetjes.";
         }
         ?>
 
     </div>
 
-
-    <p>
-        <a href="uitloggen.php" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
 
     <?php
 

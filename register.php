@@ -96,39 +96,82 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <meta http-equiv="content-type"
+          Content="text/html;
+              charset=UTF-8">
+    <meta name="robots" content="all">
+    <meta name="language" content="Dutch">
+    <meta name="author" content="Mohamed">
+    <meta name="description" content="KnowItall">
+    <meta name="keywords" content="KnowItAll, weetjes">
+    <meta name="copyright" content="copyright">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="mysql.php">
+    <script src="willekeurig.js"></script>
+    <title>KnowItAll</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+       body{ font: 12px sans-serif; }
+        .wrapper{ width: 400px; padding: 20px; }
+
     </style>
+    <link rel="stylesheet" href="styless.css">
 </head>
+<header>
+    <div class="burgermenu">
+        <div class="topnav2">
+            <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="#news">Home</a>
+                <a href="#contact">Willekeurige weetje</a>
+                <a href="#about">Inloggen</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="navigation">
+
+        <div class="topnav">
+            <img src="Images/music.png">
+            <a href="inloggen.php">Inloggen</a>
+            <a href="willekeurig.php">Willekeurig weetje</a>
+            <a  class="active" href="index.html">Home</a>
+            <a  href="welkom.php">test</a>
+        </div>
+    </div>
+</header>
 <body>
-<div class="wrapper">
-    <h2>Sign Up</h2>
-    <p>Please fill this form to create an account.</p>
+<div class="wrapper" style=" display: block; margin-left: auto; margin-right: auto; margin-top: 10vh">
+    <h2>Registreer</h2>
+    <p>Ful je gegevens in om een account te maken.</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-            <label>Username</label>
+            <label>Gebruikersnaam</label>
             <input type="text" name="gebruikersnaam" class="form-control" value="<?php echo $username; ?>">
             <span class="help-block"><?php echo $username_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
+            <label>Wachtwoord</label>
             <input type="password" name="wachtwoord" class="form-control" value="<?php echo $password; ?>">
             <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-            <label>Confirm Password</label>
+            <label>Bevestig wachtwoord</label>
             <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
             <span class="help-block"><?php echo $confirm_password_err; ?></span>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="width: 10vh">
             <input type="submit" class="btn btn-primary" value="Submit">
-            <input type="reset" class="btn btn-default" value="Reset">
         </div>
-        <p>Already have an account? <a href="inloggen.php">Login here</a>.</p>
+        <p>Heb je al een account? <a href="inloggen.php">Log hier in</a>.</p>
     </form>
 </div>
 </body>

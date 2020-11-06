@@ -98,6 +98,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <meta name="copyright" content="copyright">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="willekeurig.js"></script>
         <style type="text/css">
             body{ font: 14px sans-serif; }
             .wrapper{ width: 350px; padding: 20px; }
@@ -108,6 +110,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </head>
 
     <header>
+        <div class="burgermenu">
+            <div class="topnav2">
+                <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                    <a href="#news">Home</a>
+                    <a href="#contact">Willekeurige weetje</a>
+                    <a href="#about">Inloggen</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+
         <div class="navigation">
 
             <div class="topnav">
@@ -126,22 +144,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="wrapper" style=" display: block; margin-left: auto; margin-right: auto; margin-top: 10vh">
         <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+        <p>Vul je login gegevens in.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
+                <label>Gebruikersnaam</label>
                 <input type="text" name="gebruikersnaam" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
+                <label>Wachtwoord</label>
                 <input type="password" name="wachtwoord" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login" style="background-color: #F06292; color: white; display: block; margin-left: auto; margin-right: auto;">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Heb je nog geen account? <a href="register.php">Registreer nu</a>.</p>
         </form>
     </div>
 
