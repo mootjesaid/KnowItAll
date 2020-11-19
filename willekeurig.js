@@ -16,12 +16,24 @@ function gebruikerverwijderen(id) {
 
 }
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
     } else {
-        x.style.display = "block";
+        x.className = "topnav";
     }
+}
+
+function logo() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav responsive") {
+        document.getElementById("logo").style.display = "none";
+    } else if (x.className === "topnav" ) {
+        document.getElementById("logo").style.display = "block";
+    }
+
 }

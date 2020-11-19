@@ -12,7 +12,7 @@ if (mysqli_num_rows($result) > 0) {
 
         $dingezonden = $row["datum_ingezonden"];
         $wingezonden = $row["weetje_ingezonden"];
-
+        $image = "muziek.png";
 
     }
 } else {
@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 // Attempt insert query execution
-$sql = "INSERT INTO weetjes (weetje, datum) VALUES ('$wingezonden', '$dingezonden')";
+$sql = "INSERT INTO weetjes (weetje, datum, afbeelding) VALUES ('$wingezonden', '$dingezonden', '$image')";
 if(mysqli_query($link, $sql)){
     header("Location: http://localhost/Level%204/KnowItAll/admin.php");
 }

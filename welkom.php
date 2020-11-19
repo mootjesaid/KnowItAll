@@ -1,6 +1,7 @@
 <?php
 // Include config file
 require_once "mysql.php";
+session_start();
 
 $sql = "SELECT gebruikersnaam FROM gebruikers ";
 
@@ -18,6 +19,8 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
         <meta name="description" content="KnowItall">
         <meta name="keywords" content="KnowItAll, weetjes">
         <meta name="copyright" content="copyright">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
         <link rel="stylesheet" href="index.php">
@@ -27,28 +30,19 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
     </head>
 
     <header>
-        <div class="burgermenu">
-            <div class="topnav2">
-                <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="myLinks">
-                    <a href="#news">Home</a>
-                    <a href="#contact">Willekeurige weetje</a>
-                    <a href="#about">Inloggen</a>
-                </div>
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="container">
+            <div class="topnav" id="myTopnav">
+                <img class="logo" id="logo" src="Images/music.png">
+                <?php if (isset($_SESSION["loggedin"])){?>
+                    <a href="welkom.php">Profiel</a>
+                <?php } else { ?>
+                    <a href="inloggen.php">Inloggen</a>
+                <?php } ?>
+                <a  href="willekeurig.php" class="active">Willekeurige weetjes</a>
+                <a href="index.php">KnowItAll</a>
+                <a href="javascript:void(0);" class="icon"  onclick="myFunction(); logo()">
                     <i class="fa fa-bars"></i>
                 </a>
-            </div>
-        </div>
-        <div class="navigation">
-
-            <div class="topnav">
-                <img src="Images/music.png" alt="Music" class="responsive">
-                <a href="welkom.php">Profiel</a>
-                <a href="willekeurig.php">Willekeurig weetje</a>
-                <a  class="active" href="index.php">profiel</a>
             </div>
         </div>
     </header>
@@ -75,7 +69,7 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
     <div class="weetjesgebruiker">
 
         <?php
-        session_start();
+
 
         $gebruikersnaamid = $_SESSION['gebruikersnaam'];
         echo "<h1>Hallo $gebruikersnaamid</h1>";

@@ -48,6 +48,7 @@ if (!$conn) {
 }
 
 function dagweetje(){
+    
     $sql = "SELECT datum, weetje, afbeelding, bron FROM weetjes WHERE DATE(actueel) = current_date ";
 
     $result = mysqli_query($GLOBALS["conn"], $sql);
@@ -60,7 +61,6 @@ function dagweetje(){
             echo "" . $row["weetje"] . "<br><br>";
             echo "<img src='images/" . $row["afbeelding"] . "' style='width: 300px'><br><br>";
             echo "" . $row["bron"] . "<br><br>";
-
 
         }
     } else {
@@ -76,12 +76,12 @@ function dagweetje(){
                 echo "<img src='images/" . $row["afbeelding"] . "' style='width: 300px'><br><br>";
                 echo "" . $row["bron"] . "<br><br>";
 
-
             }
 
-            
         }
     }
+
+
 }
 
 function eigenweetjes(){
@@ -106,26 +106,27 @@ function eigenweetjes(){
 }
 function agenda()
 {
+
     $datum2 = empty($_POST['datum']) ? '' : $_POST['datum'];
-    $sql = "SELECT datum, weetje, afbeelding, bron FROM weetjes WHERE datum = '$datum2' LIMIT 1 ";
+    $sql = "SELECT id, datum, weetje, afbeelding, bron FROM weetjes WHERE datum = '$datum2' LIMIT 1 ";
 
     $result = mysqli_query($GLOBALS["conn"], $sql);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0 ) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
 
             echo "" . $row["datum"] . "<br><br>";
+                echo "<img src='images/" . $row["afbeelding"] . "' style='width: 20vh'><br><br>";
             echo "" . $row["weetje"] . "<br><br>";
-                echo "<img src='images/" . $row["afbeelding"] . "' style='width: 250px'><br><br>";
-
-
             echo "" . $row["bron"] . "<br><br>";
 
 
         }
     }
 }
+
+
 
 ?>
 

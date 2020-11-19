@@ -1,5 +1,6 @@
-
 <?php
+require_once "mysql.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,8 @@
         <meta name="description" content="KnowItall">
         <meta name="keywords" content="KnowItAll, weetjes">
         <meta name="copyright" content="copyright">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,32 +24,22 @@
     </head>
 
     <header>
-        <div class="burgermenu">
-            <div class="topnav2">
-                <a href="#home" class="active2" style="color: rgb(255,192,203)">KnowItall</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="myLinks">
-                    <a href="#news">Home</a>
-                    <a href="#contact">Willekeurige weetje</a>
-                    <a href="#about">Inloggen</a>
+        <div class="container">
+            <div class="container">
+                <div class="topnav" id="myTopnav">
+                    <img class="logo" id="logo" src="Images/music.png">
+                    <?php if (isset($_SESSION["loggedin"])){?>
+                        <a href="welkom.php">Profiel</a>
+                    <?php } else { ?>
+                        <a href="inloggen.php">Inloggen</a>
+                    <?php } ?>
+                    <a  href="willekeurig.php" class="active">Willekeurige weetjes</a>
+                    <a href="index.php">KnowItAll</a>
+                    <a href="javascript:void(0);" class="icon"  onclick="myFunction(); logo()">
+                        <i class="fa fa-bars"></i>
+                    </a>
                 </div>
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
             </div>
-        </div>
-
-        <div class="navigation">
-
-            <div class="topnav">
-                <img src="Images/music.png" alt="Music" class="responsive">
-                <a href="inloggen.php">Inloggen</a>
-                <a href="willekeurig.html">Willekeurig weetje</a>
-                <a  class="active" href="index.html">Home</a>
-                <a  class="active" href="welkom.php">test</a>
-            </div>
-        </div>
     </header>
 
     <body>
@@ -96,8 +89,7 @@
     <div class="box">
         <?php
         echo "<h2>Gebruikers</h2>";
-        // Include config file
-        require_once "mysql.php";
+
 
         $sql = "SELECT id, gebruikersnaam FROM gebruikers";
 
