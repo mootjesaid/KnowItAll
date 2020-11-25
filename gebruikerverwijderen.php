@@ -33,7 +33,7 @@ if ($conn->query($sql) === TRUE) {
 $sql = "DELETE  FROM gebruikers WHERE id = '$id' ";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: http://localhost/Level%204/KnowItAll/admin.php");
+    header("Location: http://localhost/Level%204/KnowItAll/adminpanel.php");
 } else {
     echo "Error verwijdering van gebruiker: " . $conn->error;
 }

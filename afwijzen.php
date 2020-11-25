@@ -5,7 +5,7 @@ $id = $_GET['gebruiker'];
 $sql = "DELETE FROM weetjes_gebruikers WHERE weetjes_gebruikers_id = '$id'";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: http://localhost/Level%204/KnowItAll/admin.php");
+    header("Location: http://localhost/Level%204/KnowItAll/adminpanel.php");
 
     exit();
 

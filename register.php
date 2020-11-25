@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <?php } else { ?>
                 <a href="inloggen.php">Inloggen</a>
             <?php } ?>
-            <a  href="willekeurig.php" class="active">Willekeurige weetjes</a>
+            <a  href="willekeurig.php">Willekeurige weetjes</a>
             <a href="index.php">KnowItAll</a>
             <a href="javascript:void(0);" class="icon"  onclick="myFunction(); logo()">
                 <i class="fa fa-bars"></i>

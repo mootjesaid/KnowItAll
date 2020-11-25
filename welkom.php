@@ -21,6 +21,8 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
         <meta name="copyright" content="copyright">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styless.css">
         <link rel="stylesheet" href="index.php">
@@ -36,7 +38,7 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
                 <?php if (isset($_SESSION["loggedin"])){?>
                     <a href="welkom.php">Profiel</a>
                 <?php } else { ?>
-                    <a href="inloggen.php">Inloggen</a>
+                    <a class="active" href="inloggen.php">Inloggen</a>
                 <?php } ?>
                 <a  href="willekeurig.php" class="active">Willekeurige weetjes</a>
                 <a href="index.php">KnowItAll</a>
@@ -56,12 +58,13 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
         </p>
     </div>
 
+    <h1 class="weetjesverzenden" style="color: white">Verzend hier een weetje ! </h1>
     <form class="welkomform" action="welkom.php" method="POST">
-        <label for="dag">Kies een dag uit:</label>
+        <label for="dag" style="color: #F06292">Kies een dag uit:</label>
         <input type="date" id="dag" name="datum">
         <label for="weetje"></label>
         <textarea name="insturen" id="insturen" maxlength="250"></textarea>
-            <input type="submit" name="submit" class="btn btn-primary" value="verzendweetje">
+            <input type="submit" name="submit" class="btn btn-primary" value="verzend weetje">
         <h><br>
     </form>
 
@@ -69,8 +72,6 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
     <div class="weetjesgebruiker">
 
         <?php
-
-
         $gebruikersnaamid = $_SESSION['gebruikersnaam'];
         echo "<h1>Hallo $gebruikersnaamid</h1>";
         $sql = "SELECT datum_ingezonden, weetje_ingezonden, gebruiker_id FROM weetjes_gebruikers WHERE  gebruiker_id ='$gebruikersnaamid'";
@@ -99,11 +100,6 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
 
 
     <?php
-
-
-
-
-
     // Define variables and initialize with empty values
     $gebruikersnaamid = $_SESSION['gebruikersnaam'];
     $weetje = $datum = "";
@@ -149,6 +145,7 @@ $sql = "SELECT gebruikersnaam FROM gebruikers ";
 
                 // Close statement
                 mysqli_stmt_close($stmt);
+                header("Location: http://localhost/Level%204/KnowItAll/welkom.php");
             }
         }
 

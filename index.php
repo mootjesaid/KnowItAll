@@ -1,7 +1,6 @@
 <?php
 require_once "mysql.php";
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +18,8 @@ session_start();
     <meta name="copyright" content="copyright">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styless.css">
     <link rel="stylesheet" href="mysql.php">
     <script src="willekeurig.js"></script>
@@ -28,14 +29,15 @@ session_start();
 <header>
     <div class="container">
         <div class="topnav" id="myTopnav">
+
             <img class="logo" id="logo" src="Images/music.png">
             <?php if (isset($_SESSION["loggedin"])){?>
                 <a href="welkom.php">Profiel</a>
             <?php } else { ?>
                 <a href="inloggen.php">Inloggen</a>
             <?php } ?>
-            <a  href="willekeurig.php" class="active">Willekeurige weetjes</a>
-            <a href="index.php">KnowItAll</a>
+            <a  href="willekeurig.php">Willekeurige weetjes</a>
+            <a class="active" href="index.php">KnowItAll</a>
             <a href="javascript:void(0);" class="icon"  onclick="myFunction(); logo()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -50,7 +52,9 @@ session_start();
 
 <div class="box0">
     <?php
+
     dagweetje();
+
 
     ?>
     

@@ -18,6 +18,8 @@ session_start();
     <meta name="copyright" content="copyright">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styless.css">
    <script src="willekeurig.js"></script>
@@ -58,7 +60,7 @@ session_start();
         <input type="submit" name="submit" onchange="datum()">
     </form>
     <div class="weetjes">
-        <div class="agendaweetje">
+        <div class="agendaweetje" id="agendaweetje">
             <?php
             agenda();
             ?>

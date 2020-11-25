@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
 // Attempt insert query execution
 $sql = "INSERT INTO weetjes (weetje, datum, afbeelding) VALUES ('$wingezonden', '$dingezonden', '$image')";
 if(mysqli_query($link, $sql)){
-    header("Location: http://localhost/Level%204/KnowItAll/admin.php");
+    header("Location: http://localhost/Level%204/KnowItAll/adminpanel.php");
 }
 
 // sql to delete a record
